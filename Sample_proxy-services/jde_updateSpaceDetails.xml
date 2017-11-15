@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="jde_updateSpaceDetails"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="accessToken" expression="json-eval($.accessToken)"/>
+         <property name="spaceId" expression="json-eval($.spaceId)"/>
+         <property name="tenant" expression="json-eval($.tenant)"/>
+         <property name="lease" expression="json-eval($.lease)"/>
+         <property name="hierarchy" expression="json-eval($.hierarchy)"/>
+         <jde.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <accessToken>{$ctx:accessToken}</accessToken>
+         </jde.init>
+         <jde.updateSpaceDetails>
+            <spaceId>{$ctx:spaceId}</spaceId>
+            <tenant>{$ctx:tenant}</tenant>
+            <lease>{$ctx:lease}</lease>
+            <hierarchy>{$ctx:hierarchy}</hierarchy>
+         </jde.updateSpaceDetails>
+         <respond/>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>

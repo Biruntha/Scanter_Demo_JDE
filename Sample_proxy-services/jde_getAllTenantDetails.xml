@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="jde_getAllTenantDetails"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="accessToken" expression="json-eval($.accessToken)"/>
+         <jde.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <accessToken>{$ctx:accessToken}</accessToken>
+         </jde.init>
+         <jde.getAllTenantDetails/>
+         <respond/>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>

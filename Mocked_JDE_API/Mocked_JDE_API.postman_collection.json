@@ -1,0 +1,645 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Mocked_JDE_API",
+		"_postman_id": "67ef2bf3-84a8-7ec4-b770-0eaf6e2e3790",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllLeaseDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "b6b597ed-7cb4-42d8-b08d-19f36d302eea",
+					"name": "getAllLeaseDetails",
+					"originalRequest": {
+						"url": "https://jde.org/lease",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "[\n    {\n    \t\"id\" : 1,\n        \"Tenant\": 1040,\n        \"Lease Manager\": \"8001\",\n        \"Alt. Payee\": 1040,\n        \"Payment Source\": \"1050\",\n        \"Lease Type\": \"AP\",\n        \"Lease Status\": \"E\",\n        \"Payment Terms\": \"D\",\n        \"Lessee\": \"Y\",\n        \"Term of Lease\": 5\n    },\n    {\n    \t\"id\" : 2,\n        \"Tenant\": 1045,\n        \"Lease Manager\": \"8005\",\n        \"Alt. Payee\": 1045,\n        \"Payment Source\": \"1050\",\n        \"Lease Type\": \"CO\",\n        \"Lease Status\": \"N\",\n        \"Payment Terms\": \"N\",\n        \"Lessee\": \"Y\",\n        \"Term of Lease\": 8\n    },\n    {\n    \t\"id\" : 3,\n        \"Tenant\": 1048,\n        \"Lease Manager\": \"8007\",\n        \"Alt. Payee\": 1060,\n        \"Payment Source\": \"1048\",\n        \"Lease Type\": \"RT\",\n        \"Lease Status\": \"L\",\n        \"Payment Terms\": \"P\",\n        \"Lessee\": \"Y\",\n        \"Term of Lease\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getLeaseById",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "39f648f9-b84d-4d7d-a1e6-37bd6f2e8898",
+					"name": "getLeaseById",
+					"originalRequest": {
+						"url": "https://jde.org/lease/1",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"Tenant\": 1040,\n    \"Lease Manager\": \"8001\",\n    \"Alt. Payee\": 1040,\n    \"Payment Source\": \"1050\",\n    \"Lease Type\": \"AP\",\n    \"Lease Status\": \"E\",\n    \"Payment Terms\": \"D\",\n    \"Lessee\": \"Y\",\n    \"Term of Lease\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "createLease",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "a43450c2-a980-40ec-8ffd-36685d7126cb",
+					"name": "createLease",
+					"originalRequest": {
+						"url": "https://jde.org/lease",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Tenant\": 1040,\n    \"Lease Manager\": \"8001\",\n    \"Alt. Payee\": 1040,\n    \"Payment Source\": \"1050\",\n    \"Lease Type\": \"AP\",\n    \"Lease Status\": \"E\",\n    \"Payment Terms\": \"D\",\n    \"Lessee\": \"Y\",\n    \"Term of Lease\": 5\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n\t\"error\" : \"false\",\n\t\"message\" : \"Successfully created lease details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateLeaseDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "34773b88-2c7e-4efc-b5a3-05c4bdbd2493",
+					"name": "updateLeaseDetails",
+					"originalRequest": {
+						"url": {
+							"raw": "https://jde.org/lease/1?Tenant=1022&Lessee=Y",
+							"protocol": "https",
+							"host": [
+								"jde",
+								"org"
+							],
+							"path": [
+								"lease",
+								"1"
+							],
+							"query": [
+								{
+									"key": "Tenant",
+									"value": "1022",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "Lessee",
+									"value": "Y",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully updated lease details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllSpaceDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "3a0c192b-a7df-4b29-bb6e-9eb295190236",
+					"name": "getAllSpaceDetails",
+					"originalRequest": {
+						"url": "https://jde.org/space/",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "[\n\t{\n\t\"Id\" : 1001,\n\t\"Tenant\" : 1040,\n\t\"Lease\" : 221,\n\t\"Square Footage\" : \"40ft\",\n\t\"Date Offered\" : \"02/05/2017\",\n\t\"Decision Required\" : \"A\",\n\t\"Status Change\" : \"02/08/2017\",\n\t\"Hierarchy\" : \"1ST\"\n},\n{\n\t\"Id\" : 1002,\n\t\"Tenant\" : 1044,\n\t\"Lease\" : 1221,\n\t\"Square Footage\" : \"20ft\",\n\t\"Date Offered\" : \"02/10/2017\",\n\t\"Decision Required\" : \"A\",\n\t\"Status Change\" : \"02/12/2017\",\n\t\"Hierarchy\" : \"1ST\"\n},\n{\n\t\"Id\" : 1003,\n\t\"Tenant\" : 1020,\n\t\"Lease\" : 8921,\n\t\"Square Footage\" : \"80ft\",\n\t\"Date Offered\" : \"03/05/2017\",\n\t\"Decision Required\" : \"D\",\n\t\"Status Change\" : \"03/08/2017\",\n\t\"Hierarchy\" : \"1ST\"\n}]"
+				}
+			]
+		},
+		{
+			"name": "getSpaceById",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "9382765a-f5bf-4e05-bfef-aef865510e6b",
+					"name": "getSpaceById",
+					"originalRequest": {
+						"url": "https://jde.org/space/1001",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"Tenant\": 1040,\n    \"Lease\": 221,\n    \"Square Footage\": \"40ft\",\n    \"Date Offered\": \"02/05/2017\",\n    \"Decision Required\": \"A\",\n    \"Status Change\": \"02/08/2017\",\n    \"Hierarchy\": \"1ST\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createSpace",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "696aa25b-aa2c-4e45-b84c-499cf35d6118",
+					"name": "createSpace",
+					"originalRequest": {
+						"url": "https://jde.org/space",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Tenant\": 1044,\n    \"Lease\": 1221,\n    \"Square Footage\": \"20ft\",\n    \"Date Offered\": \"02/10/2017\",\n    \"Decision Required\": \"A\",\n    \"Status Change\": \"02/12/2017\",\n    \"Hierarchy\": \"1ST\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully created space details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateSpaceDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "bcea7722-3d62-4872-af19-d43938a790b1",
+					"name": "updateSpaceDetails",
+					"originalRequest": {
+						"url": {
+							"raw": "https://jde.org/space/1001?Tenant=1043&Lease=1098&Hierarchy=2nd",
+							"protocol": "https",
+							"host": [
+								"jde",
+								"org"
+							],
+							"path": [
+								"space",
+								"1001"
+							],
+							"query": [
+								{
+									"key": "Tenant",
+									"value": "1043",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "Lease",
+									"value": "1098",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "Hierarchy",
+									"value": "2nd",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully updated space details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllBillDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "f79da7f1-fb60-4502-9721-8ceeeadf50e7",
+					"name": "getAllBillDetails",
+					"originalRequest": {
+						"url": "https://jde.org/bill",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "[{\n\t\"Invoice Number\" : 68400150,\n\t\"Lease Number\" : 1,\n\t\"Invoice Amount\" : 6500.00,\n\t\"Invoice Date\" : \"02/05/2017\",\n\t\"G/L Date\" : \"02/09/2017\",\n\t\"Tax Ex Code\" : \"S\",\n\t\"Tax Rate Area\" : \"DEN\",\n\t\"Payment Terms\" : null,\n\t\"Serv/Tax Date\" : \"03/04/2017\",\n\t\"Supplier Invoice\" : 1442001,\n\t\"Gen Type\" : 7,\n\t\"Inv Prt Cd\" : \"Y\",\n\t\"Trans Curr\" : \"$\",\n\t\"Exchange Rate\" : 10,\n\t\"Pay Itm\" : 001,\n\t\"Gross Amount\" : 50000.00,\n\t\"Account Number\" : \"15020.5390\",\n\t\"Due date\" : \"05/08/2017\"\n},\n{\n\t\"Invoice Number\" : 62109190,\n\t\"Lease Number\" : 2,\n\t\"Invoice Amount\" : 17500.00,\n\t\"Invoice Date\" : \"03/05/2017\",\n\t\"G/L Date\" : \"03/09/2017\",\n\t\"Tax Ex Code\" : \"S\",\n\t\"Tax Rate Area\" : \"DEN\",\n\t\"Payment Terms\" : null,\n\t\"Serv/Tax Date\" : \"06/04/2017\",\n\t\"Supplier Invoice\" : 9842001,\n\t\"Gen Type\" : 7,\n\t\"Inv Prt Cd\" : \"Y\",\n\t\"Trans Curr\" : \"$\",\n\t\"Exchange Rate\" : 10,\n\t\"Pay Itm\" : 002,\n\t\"Gross Amount\" : 5000.00,\n\t\"Account Number\" : \"15320.5390\",\n\t\"Due date\" : \"08/08/2017\"\n}]"
+				}
+			]
+		},
+		{
+			"name": "getBillById",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "e2199e2d-5cc3-4690-a12c-41e48270d308",
+					"name": "getBillById",
+					"originalRequest": {
+						"url": "https://jde.org/bill/68400150",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n\t\"Invoice Number\" : 68400150,\n\t\"Lease Number\" : 1,\n\t\"Invoice Amount\" : 6500.00,\n\t\"Invoice Date\" : \"02/05/2017\",\n\t\"G/L Date\" : \"02/09/2017\",\n\t\"Tax Ex Code\" : \"S\",\n\t\"Tax Rate Area\" : \"DEN\",\n\t\"Payment Terms\" : null,\n\t\"Serv/Tax Date\" : \"03/04/2017\",\n\t\"Supplier Invoice\" : 1442001,\n\t\"Gen Type\" : 7,\n\t\"Inv Prt Cd\" : \"Y\",\n\t\"Trans Curr\" : \"$\",\n\t\"Exchange Rate\" : 10,\n\t\"Pay Itm\" : 001,\n\t\"Gross Amount\" : 50000.00,\n\t\"Account Number\" : \"15020.5390\",\n\t\"Due date\" : \"05/08/2017\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createBill",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "76a8aa51-5ca6-41a2-b508-5ff1b3acf982",
+					"name": "createBill",
+					"originalRequest": {
+						"url": "https://jde.org/bill",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Invoice Number\" : 68400150,\n\t\"Lease Number\" : 1,\n\t\"Invoice Amount\" : 6500,\n\t\"Invoice Date\" : \"02/05/2017\",\n\t\"G/L Date\" : \"02/09/2017\",\n\t\"Tax Ex Code\" : \"S\",\n\t\"Tax Rate Area\" : \"DEN\",\n\t\"Serv/Tax Date\" : \"03/04/2017\",\n\t\"Supplier Invoice\" : 1442001,\n\t\"Gen Type\" : 7,\n\t\"Inv Prt Cd\" : \"Y\",\n\t\"Trans Curr\" : \"$\",\n\t\"Exchange Rate\" : 10,\n\t\"Pay Itm\" : \"001\",\n\t\"Gross Amount\" : 50000,\n\t\"Account Number\" : \"150205390\",\n\t\"Due date\" : \"05/08/2017\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully created bill details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateBillDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "9e93f347-c215-4220-aeaa-14f2db971341",
+					"name": "updateBillDetails",
+					"originalRequest": {
+						"url": {
+							"raw": "https://jde.org/bill/68400150?InvoiceDate=02/05/2017&SupplierInvoice=123455",
+							"protocol": "https",
+							"host": [
+								"jde",
+								"org"
+							],
+							"path": [
+								"bill",
+								"68400150"
+							],
+							"query": [
+								{
+									"key": "InvoiceDate",
+									"value": "02/05/2017",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "SupplierInvoice",
+									"value": "123455",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully updated bill details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllTenantDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "ecc483ab-c803-4527-8751-617a2b7fc14f",
+					"name": "getAllTenantDetails",
+					"originalRequest": {
+						"url": "https://jde.org/tenant",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "[\n    {\n        \"Tenant Id\": 1040,\n        \"Description\": \"First tenant\",\n        \"Area Method\": \"4\",\n        \"Payables\": \"Y\",\n        \"Receivables\": \"N\",\n        \"Area Definition ID\": \"RITDSFDN\",\n        \"Base Area Type\": \"REN\"\n    },\n    {\n        \"Tenant Id\": 1045,\n        \"Description\": \"Second tenant\",\n        \"Area Method\": \"6\",\n        \"Payables\": \"Y\",\n        \"Receivables\": \"N\",\n        \"Area Definition ID\": \"RITDSFDN\",\n        \"Base Area Type\": \"REN\"\n    },\n    {\n        \"Tenant Id\": 1048,\n        \"Description\": \"Third tenant\",\n        \"Area Method\": \"2\",\n        \"Payables\": \"Y\",\n        \"Receivables\": \"N\",\n        \"Area Definition ID\": \"RITDSFDN\",\n        \"Base Area Type\": \"REN\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getTenantById",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "ee3ce2f2-1de3-43e9-b8e2-871b09f09407",
+					"name": "getTenantById",
+					"originalRequest": {
+						"url": "https://jde.org/tenant/1040",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"Description\": \"First tenant\",\n    \"Area Method\": \"4\",\n    \"Payables\": \"Y\",\n    \"Receivables\": \"N\",\n    \"Area Definition ID\": \"RITDSFDN\",\n    \"Base Area Type\": \"REN\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createTenant",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "391950b0-cadc-4ef1-ae9a-c1fc8b3b08e9",
+					"name": "createTenant",
+					"originalRequest": {
+						"url": "https://jde.org/tenant/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Description\": \"Forth tenant\",\n    \"Area Method\": \"4\",\n    \"Payables\": \"Y\",\n    \"Receivables\": \"N\",\n    \"Area Definition ID\": \"RITDSFDN\",\n    \"Base Area Type\": \"REN\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully created tenant details\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateTenantDetails",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "ec6cc654-c7d9-4a6f-aa84-8e6d32358088",
+					"name": "updateTenantDetails",
+					"originalRequest": {
+						"url": {
+							"raw": "https://jde.org/tenant/1040?Payables=N&Receivables=N",
+							"protocol": "https",
+							"host": [
+								"jde",
+								"org"
+							],
+							"path": [
+								"tenant",
+								"1040"
+							],
+							"query": [
+								{
+									"key": "Payables",
+									"value": "N",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "Receivables",
+									"value": "N",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"error\": \"false\",\n    \"message\": \"Successfully updated tenant details\"\n}"
+				}
+			]
+		}
+	]
+}

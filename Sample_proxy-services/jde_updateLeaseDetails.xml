@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="jde_updateLeaseDetails"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="accessToken" expression="json-eval($.accessToken)"/>
+         <property name="leaseId" expression="json-eval($.leaseId)"/>
+         <property name="tenant" expression="json-eval($.tenant)"/>
+         <property name="lessee" expression="json-eval($.lessee)"/>
+         <jde.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <accessToken>{$ctx:accessToken}</accessToken>
+         </jde.init>
+         <jde.updateLeaseDetails>
+            <leaseId>{$ctx:leaseId}</leaseId>
+            <tenant>{$ctx:tenant}</tenant>
+            <lessee>{$ctx:lessee}</lessee>
+         </jde.updateLeaseDetails>
+         <respond/>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>

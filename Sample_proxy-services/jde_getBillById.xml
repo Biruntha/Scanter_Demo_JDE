@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="jde_getBillById"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="accessToken" expression="json-eval($.accessToken)"/>
+         <property name="billId" expression="json-eval($.billId)"/>
+         <jde.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <accessToken>{$ctx:accessToken}</accessToken>
+         </jde.init>
+         <jde.getBillById>
+            <billId>{$ctx:billId}</billId>
+         </jde.getBillById>
+         <respond/>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>
